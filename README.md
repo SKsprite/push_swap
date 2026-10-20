@@ -1,1 +1,1 @@
-*This project has been created as part of the 42 curriculum by stkoh, jar
+*This project has been created as part of the 42 curriculum by stkoh, jayam*
