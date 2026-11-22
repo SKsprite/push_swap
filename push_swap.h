@@ -6,7 +6,7 @@
 /*   By: jayam <jayam@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 15:34:05 by jayam             #+#    #+#             */
-/*   Updated: 2026/10/22 16:20:32 by jayam            ###   ########.fr       */
+/*   Updated: 2026/11/22 16:47:58 by jayam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,17 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
+
+enum e_strategies
+{
+	SIMPLE,
+	MEDIUM,
+	COMPLEX,
+	ADAPTIVE
+};
+
+// Data structures
 
 void	error_message(void);
 

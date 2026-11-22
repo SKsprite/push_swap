@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_push_swap_utils.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jayam <jayam@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 16:12:23 by jayam             #+#    #+#             */
-/*   Updated: 2026/10/22 16:16:35 by jayam            ###   ########.fr       */
+/*   Updated: 2026/11/22 16:09:41 by jayam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	error_message(void)
+void	ft_error(void)
 {
 	write(1, "Error\n", 6);
+}
+
+void	ft_disorder(void)
+{
 }
