@@ -6,17 +6,21 @@
 /*   By: jayam <jayam@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 16:12:23 by jayam             #+#    #+#             */
-/*   Updated: 2026/11/22 16:09:41 by jayam            ###   ########.fr       */
+/*   Updated: 2026/11/23 13:54:14 by jayam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_error(void)
+float	ft_disorder(void)
 {
-	write(1, "Error\n", 6);
 }
 
-void	ft_disorder(void)
+void	ft_error(void)
+{
+	write(2, "Error\n", 6);
+}
+
+void	ft_validate(void)
 {
 }

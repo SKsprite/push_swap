@@ -40,6 +40,9 @@ Gemini was used for the following tasks:
 
 - Provision of online resources on Big-O notation
 - Evaluation on ideas of current project outline
+- Differences between command-line arguments and standard input for passing arguments
+- Explanation for split- and multi- argument parsing
+- Considerations to make during validation (Incremental vs Batch)
 
 ## Algorithms
 

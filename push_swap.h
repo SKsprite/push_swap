@@ -6,7 +6,7 @@
 /*   By: jayam <jayam@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 15:34:05 by jayam             #+#    #+#             */
-/*   Updated: 2026/11/22 16:47:58 by jayam            ###   ########.fr       */
+/*   Updated: 2026/11/23 17:33:17 by jayam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,13 @@ enum e_strategies
 	ADAPTIVE
 };
 
-// Data structures
+typedef struct s_node
+{
+	int				value;
+	struct s_node	*next;
+	struct s_node	*prev;
+}					t_node;
 
-void	error_message(void);
+void	ft_error(void);
 
 #endif
