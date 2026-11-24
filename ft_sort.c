@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_sort.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jayam <jayam@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/22 15:50:49 by jayam             #+#    #+#             */
-/*   Updated: 2026/10/22 16:25:19 by jayam            ###   ########.fr       */
+/*   Created: 2026/10/22 15:54:56 by jayam             #+#    #+#             */
+/*   Updated: 2026/11/22 14:24:14 by jayam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **agrv)
+void	ft_simple()
 {
-	if (argc < 1)
-		error_message();
-	return (0);
+}
+
+void	ft_medium()
+{
+}
+
+void	ft_complex()
+{
+}
+
+void	ft_adaptive()
+{
 }

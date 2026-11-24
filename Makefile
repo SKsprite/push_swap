@@ -2,11 +2,15 @@ NAME		= push_swap
 BONUS_NAME	= checker
 CC			= cc
 CFLAGS		= -Wall -Wextra -Werror
-INC			= -Iincludes -Ilibft
+INC			= push_swap.h
 
 RM			= rm -f
 
-SRCS		= 
+SRCS		= ft_main.c \
+			ft_parse.c \
+			ft_push_swap_utils.c \
+			ft_sort.c
+
 OBJS		= $(SRCS:.c=.o)
 
 all: $(NAME)
@@ -17,8 +21,8 @@ $(NAME): $(OBJS) libft/libft.a
 libft/libft.a:
 	$(MAKE) -C libft
 
-%.o: %.c includes/push_swap.h
-	$(CC) $(CFLAGS) $(INC) -c $< -o $@
+%.o: %.c $(INC)
+		$(CC) $(CFLAGS) -c $< -o $@
 
 bonus: $(BONUS_NAME)
 $(BONUS_NAME): $(BONUS_OBJS) $(SHARED_OBJS) libft/libft.a

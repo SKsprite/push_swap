@@ -6,7 +6,7 @@
 /*   By: jayam <jayam@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 15:34:05 by jayam             #+#    #+#             */
-/*   Updated: 2026/10/25 12:47:37 by stkoh            ###   ########.fr       */
+/*   Updated: 2026/11/23 17:33:17 by jayam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,23 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
-typedef struct s_stack
+enum e_strategies
 {
-	int		num;
-	prev	*t_stack;
-	next	*t_stack;
-}	t_stack;
+	SIMPLE,
+	MEDIUM,
+	COMPLEX,
+	ADAPTIVE
+};
 
-void	error_message(void);
+typedef struct s_node
+{
+	int				value;
+	struct s_node	*next;
+	struct s_node	*prev;
+}					t_node;
+
+void	ft_error(void);
 
 #endif
