@@ -6,7 +6,7 @@
 /*   By: jayam <jayam@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 15:34:05 by jayam             #+#    #+#             */
-/*   Updated: 2026/10/22 16:20:32 by jayam            ###   ########.fr       */
+/*   Updated: 2026/10/25 12:47:37 by stkoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+
+typedef struct s_stack
+{
+	int		num;
+	prev	*t_stack;
+	next	*t_stack;
+}	t_stack;
 
 void	error_message(void);
 

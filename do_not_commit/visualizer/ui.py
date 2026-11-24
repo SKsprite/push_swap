@@ -7,7 +7,7 @@ from tkinter import ttk
 from runner import read_ops_file, run_push_swap
 from sim import OPS, History, disorder, to_ranks, wasted_moves
 from sound import Sound
-from themes import THEMES, gradient
+from themes import THEMES, apply_ttk, gradient
 
 STRATEGIES = ("adaptive", "simple", "medium", "complex")
 FRAME_MS = 16
@@ -170,36 +170,8 @@ class App:
     def apply_theme(self, name):
         self.theme_var.set(name)
         th = self.theme = THEMES[name]
-        bg, fg, panel, btn = th["bg"], th["fg"], th["panel"], th["button"]
-        s = self.style
-        self.root.configure(bg=bg)
-        for w in ("TFrame", "TLabel", "TCheckbutton"):
-            s.configure(w, background=bg, foreground=fg)
-        s.map("TCheckbutton", background=[("active", bg)],
-              indicatorbackground=[("selected", th["select"]),
-                                   ("!selected", panel)])
-        s.configure("Dim.TLabel", background=bg, foreground=th["dim"])
-        s.configure("Mono.TLabel", background=bg, foreground=fg,
-                    font=("Courier", 10))
-        for w in ("TButton", "TMenubutton"):
-            s.configure(w, background=btn, foreground=fg,
-                        bordercolor=th["divider"], lightcolor=btn,
-                        darkcolor=btn, arrowcolor=fg)
-            s.map(w, background=[("disabled", bg), ("active", th["select"])],
-                  foreground=[("disabled", th["dim"]), ("active", fg)])
-        s.configure("TEntry", fieldbackground=panel, foreground=fg,
-                    insertcolor=fg, bordercolor=th["divider"])
-        s.map("TEntry", fieldbackground=[("disabled", bg)],
-              foreground=[("disabled", th["dim"])])
-        s.configure("Horizontal.TScale", background=btn,
-                    troughcolor=panel, bordercolor=th["divider"],
-                    lightcolor=btn, darkcolor=btn)
-        s.configure("Vertical.TScrollbar", background=btn, troughcolor=panel,
-                    bordercolor=th["divider"], arrowcolor=fg,
-                    lightcolor=btn, darkcolor=btn)
-        self.root.option_add("*Menu.background", panel)
-        self.root.option_add("*Menu.foreground", fg)
-        self.root.option_add("*Menu.activeBackground", th["select"])
+        apply_ttk(self.root, self.style, th)
+        bg, fg, panel = th["bg"], th["fg"], th["panel"]
 
         self.canvas.configure(bg=bg)
         self.canvas.itemconfigure("divider", fill=th["divider"])

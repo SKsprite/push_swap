@@ -180,5 +180,20 @@ class History:
         for op in self.ops[:cp]:
             self.counts[op] += 1
 
+    def push(self, op):
+        """Run a new op at the cursor, discarding any ops after it.
+        Returns how many later ops were discarded."""
+        if op not in OPS:
+            raise ValueError(f"unknown op: {op!r}")
+        dropped = len(self.ops) - self.pos
+        del self.ops[self.pos:]
+        del self._undo[self.pos:]
+        for k in [k for k in self.checkpoints if k > self.pos]:
+            del self.checkpoints[k]
+        self.ops.append(op)
+        self._undo.append(None)
+        self.forward()
+        return dropped
+
     def last_op(self):
         return self.ops[self.pos - 1] if self.pos else None

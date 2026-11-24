@@ -171,9 +171,12 @@ Never print partial operations before detecting an error: parse and validate
 
 ### 4.4 Duplicate detection
 
-O(n²) pairwise check is fine for n ≤ a few thousand. Cleaner: you will build a
-sorted copy anyway for rank normalisation (§6.0) — check adjacent equal elements
-there in O(n log n).
+You build a sorted copy anyway for rank normalisation (§6.0), so catch
+duplicates **inside that sort**: insertion sort compares each number with its
+neighbours, and meeting an equal value means a duplicate. No extra loop is
+needed. (A plain O(n²) pairwise check also works and takes under a millisecond for 500.)
+Full explanation, tested code, and why a hash table isn't worth it here:
+[stack_and_duplicates.md](stack_and_duplicates.md) §5.
 
 ---
 
@@ -432,10 +435,8 @@ come from. Make sure it is your best one.
 ```c
 typedef struct s_stack
 {
-	int		*data;      /* ring buffer of ranks, capacity = n */
-	int		cap;
-	int		head;       /* index of top */
-	int		size;
+	int		*data;      /* ranks; data[0] = top, data[size - 1] = bottom */
+	int		size;       /* malloc'd once with room for n */
 }	t_stack;
 
 typedef enum e_op
@@ -469,8 +470,11 @@ typedef struct s_ctx            /* passed everywhere — no globals */
 }	t_ctx;
 ```
 
-A ring buffer makes every op O(1) and index access O(1) (`data[(head+i) % cap]`),
-which simplifies cost calculations. A circular doubly linked list also works.
+A plain array with the top at index 0: "position i from the top" is just
+`data[i]`, and push/rotate shift the array by one place. Shifting costs CPU time,
+but that isn't graded (~1 ms for 500 numbers), and the code is much simpler than
+a doubly linked list. Code, trace and comparison:
+[stack_and_duplicates.md](stack_and_duplicates.md) §3–4.
 
 ### 9.2 Ops: record, don't print
 

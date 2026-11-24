@@ -38,6 +38,27 @@ the small slider next to it is volume.
 - The status line shows the disorder computed in Python; compare it with
   your `[bench] disorder` line to test `disorder.c`.
 
+## Playground (manual mode)
+
+```sh
+python3 playground.py                          # subject example 2 1 3 6 5 8
+python3 playground.py 5 4 3 2 1
+python3 playground.py --ops "sa pb pb pb rr rrr sa pa pa pa" 2 1 3 6 5 8
+```
+
+- Type numbers at the top (spaces or commas; validated like push_swap:
+  integers only, int range, no duplicates) and press Enter, or use Random N.
+- Run ops with the buttons, or type them in the command box (`pb pb ra`,
+  case-insensitive, several at once) and press Enter. `↑`/`↓` recall
+  previous commands. Invalid input runs nothing.
+- History panel: every op you ran; click a row to see the stacks at that
+  point. Undo/redo (`Ctrl+Z` / `Ctrl+Y`, or `←`/`→` outside the text boxes)
+  move through it; ▶ replay animates from the start at the chosen speed.
+- Running a new op while viewing the past discards the later ops (status
+  line warns you first).
+- Copy ops puts the ops up to the cursor on the clipboard, one per line —
+  paste straight into `./checker_linux`.
+
 | File | Role |
 |------|------|
 | `sim.py` | simulator: ops, undo, checkpoints, disorder, waste detection |
@@ -46,4 +67,5 @@ the small slider next to it is volume.
 | `themes.py` | colour themes + gradient helper |
 | `sound.py` | tone synthesis + audio streaming thread |
 | `visualizer.py` | CLI entry point |
+| `playground.py` | interactive manual mode |
 | `fake_push_swap.py` | min-extraction stand-in with the same CLI, for testing |

@@ -59,3 +59,37 @@ def gradient(stops, t):
     f = seg - i
     a, b = _rgb(stops[i]), _rgb(stops[i + 1])
     return "#%02x%02x%02x" % tuple(round(x + (y - x) * f) for x, y in zip(a, b))
+
+
+def apply_ttk(root, style, th):
+    """Restyle the window and every ttk widget class for theme th."""
+    bg, fg, panel, btn = th["bg"], th["fg"], th["panel"], th["button"]
+    s = style
+    root.configure(bg=bg)
+    for w in ("TFrame", "TLabel", "TCheckbutton"):
+        s.configure(w, background=bg, foreground=fg)
+    s.map("TCheckbutton", background=[("active", bg)],
+          indicatorbackground=[("selected", th["select"]),
+                               ("!selected", panel)])
+    s.configure("Dim.TLabel", background=bg, foreground=th["dim"])
+    s.configure("Mono.TLabel", background=bg, foreground=fg,
+                font=("Courier", 10))
+    for w in ("TButton", "TMenubutton"):
+        s.configure(w, background=btn, foreground=fg,
+                    bordercolor=th["divider"], lightcolor=btn,
+                    darkcolor=btn, arrowcolor=fg)
+        s.map(w, background=[("disabled", bg), ("active", th["select"])],
+              foreground=[("disabled", th["dim"]), ("active", fg)])
+    s.configure("TEntry", fieldbackground=panel, foreground=fg,
+                insertcolor=fg, bordercolor=th["divider"])
+    s.map("TEntry", fieldbackground=[("disabled", bg)],
+          foreground=[("disabled", th["dim"])])
+    s.configure("Horizontal.TScale", background=btn,
+                troughcolor=panel, bordercolor=th["divider"],
+                lightcolor=btn, darkcolor=btn)
+    s.configure("Vertical.TScrollbar", background=btn, troughcolor=panel,
+                bordercolor=th["divider"], arrowcolor=fg,
+                lightcolor=btn, darkcolor=btn)
+    root.option_add("*Menu.background", panel)
+    root.option_add("*Menu.foreground", fg)
+    root.option_add("*Menu.activeBackground", th["select"])
