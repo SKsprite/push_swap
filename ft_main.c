@@ -6,7 +6,7 @@
 /*   By: jayam <jayam@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 15:50:49 by jayam             #+#    #+#             */
-/*   Updated: 2026/11/23 17:19:28 by jayam            ###   ########.fr       */
+/*   Updated: 2026/11/25 21:13:39 by jayam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,19 @@
 int	main(int argc, char *argv[])
 {
 	int	i;
+	int	*p;
+	t_config *cfg;
 
 	i = 1;
+	p = &i;
 	if (argc == 1)
 		exit(0);
 	else
 	{
 		while (argv[i] != NULL)
 		{
-			// Flag parsing
+			// Ignore below, this part needs to be rewritten
+			i = ft_flags(*argv[i], *p, *cfg);
 			// Integer parsing
 			i++;
 		}
@@ -43,3 +47,5 @@ int	main(int argc, char *argv[])
 // 5. Initial disorder calculation:
 // - What if initial disorder is 0?
 // 6. Strategy selection and execution - default strategy is adaptive
+
+// How can an array indexed by enum be used to track operation counters?
