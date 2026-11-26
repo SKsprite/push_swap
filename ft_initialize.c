@@ -33,9 +33,15 @@ int	init_stacks(int size_of_stack, t_data *data)
 	data->stack_b->values = ft_calloc(sizeof(t_element), size_of_stack);
 	if (data->stack_a->values && data->stack_b->values)
 		return (1);
+	return (0);
+}
+
+void	free_stack(t_data *data)
+{
 	free(data->stack_a->values);
 	free(data->stack_b->values);
-	return (0);
+	free(data->stack_a);
+	free(data->stack_b);
 }
 
 /**
@@ -57,28 +63,11 @@ t_data	*init_data(int size_of_stack)
 	data->stack_a = malloc(sizeof(t_stack));
 	data->stack_b = malloc(sizeof(t_stack));
 	if (!data->stack_a || !data->stack_b || !init_stacks(size_of_stack, data))
-		return (free(data->stack_a), free(data->stack_b), free(data), NULL);
+		return (free_stack(data), free(data), NULL);
 	data->cfg = malloc(sizeof(t_config));
 	if (!data->cfg)
 		return (free_stack(data), free(data), NULL);
 	return (data);
-}
-
-void	free_stack(t_data *data)
-{
-	int	i;
-	
-	i = 0;
-	while (i < data->stack_a->cap)
-	{
-		free(&data->stack_a->values[i]);
-		free(&data->stack_b->values[i]);
-		i++;
-	}
-	free(data->stack_a->values);
-	free(data->stack_b->values);
-	free(data->stack_a);
-	free(data->stack_b);
 }
 
 /**

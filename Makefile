@@ -1,12 +1,11 @@
 NAME		= push_swap
 CC			= cc
-CFLAGS		= -Wall -Wextra -Werror
+CFLAGS		= -Wall -Wextra -Werror -g
 INC			= push_swap.h
 
 LIBFT_DIR	= ./libft
 LIBFT		= $(LIBFT_DIR)/libft.a
 
-AR			= ar rcs
 RM			= rm -f
 
 SRCS		= ft_initialize.c \
@@ -21,8 +20,7 @@ OBJS		= $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(OBJS)
-		cp $(LIBFT) $(NAME)
-		$(AR) $(NAME) $(OBJS)
+		$(CC) $(CFLAGS) -o $(NAME) $(OBJS) -L$(LIBFT_DIR) -lft
 
 $(LIBFT):
 		$(MAKE) -C $(LIBFT_DIR)
