@@ -28,7 +28,7 @@ typedef enum e_strategies
 typedef struct s_element
 {
 	int	value;
-	int rank;
+	int	rank;
 
 }	t_element;
 
@@ -38,7 +38,14 @@ typedef struct s_stack
 	int			head;
 	int			size;
 	int			cap;
-}		t_stack;
+}	t_stack;
+
+typedef struct s_data
+{
+	t_stack		*a;
+	t_stack		*b;
+	t_config	config;
+}	t_data;
 
 typedef struct s_config
 {
@@ -57,7 +64,7 @@ typedef struct s_config
 	int		rra_count;
 	int		rrb_count;
 	int		rrr_count;
-}			t_config;
+}	t_config;
 
 void	ft_error(void);
 
