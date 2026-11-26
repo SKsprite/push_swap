@@ -26,6 +26,41 @@ typedef enum e_strategies
 	ADAPTIVE
 }	t_strategies;
 
+/**
+ * @brief The structure of the elements storing a number and their rank value.
+ */
+typedef struct s_element
+{
+	/** The actual value of the inputs*/
+	int	value;
+	/** The normalized number of the inputs*/
+	int	rank;
+
+}	t_element;
+
+/**
+ * @brief The structure of the implemented stack.
+ *
+ * Stores data and metadata relating to a dynamic array-based stack.
+ */
+typedef struct s_stack
+{
+	/** The actual data and elements in the stack. */
+	t_element	*values;
+	/** The current index for the element at the top of the stack. 
+	 * if head is < 0, size should be 0.
+	*/
+	int			head;
+	/** The current size of the stack (number of elements). */
+	int			size;
+	/** The total capacity of the stack (maximum size). */
+	int			cap;
+}	t_stack;
+
+/**
+ * @brief The structure storing the configurations and
+ * information about the current sorting.
+ */
 typedef struct s_config
 {
 	int				bench_mode;
@@ -45,21 +80,9 @@ typedef struct s_config
 	int				rrr_count;
 }					t_config;
 
-typedef struct s_element
-{
-	int	value;
-	int	rank;
-
-}	t_element;
-
-typedef struct s_stack
-{
-	t_element	*values;
-	int			head;
-	int			size;
-	int			cap;
-}	t_stack;
-
+/**
+ * @brief The structure of the data in the current program.
+ */
 typedef struct s_data
 {
 	t_stack		*stack_a;
@@ -68,5 +91,7 @@ typedef struct s_data
 }	t_data;
 
 void	ft_error(void);
+t_data	*init_data(int size_of_stack);
+void	free_data(t_data *data);
 
 #endif
