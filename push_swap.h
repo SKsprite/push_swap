@@ -6,7 +6,7 @@
 /*   By: jayam <jayam@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 15:34:05 by jayam             #+#    #+#             */
-/*   Updated: 2026/11/26 12:56:54 by jayam            ###   ########.fr       */
+/*   Updated: 2026/11/26 13:13:21 by jayam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,6 @@ typedef enum e_strategies
 	COMPLEX,
 	ADAPTIVE
 }	t_strategies;
-
-typedef struct s_element
-{
-	int	value;
-	int	rank;
-
-}	t_element;
-
-typedef struct s_stack
-{
-	t_element	*values;
-	int			head;
-	int			size;
-	int			cap;
-}	t_stack;
 
 typedef struct s_config
 {
@@ -58,6 +43,21 @@ typedef struct s_config
 	int				rrb_count;
 	int				rrr_count;
 }					t_config;
+
+typedef struct s_element
+{
+	int	value;
+	int	rank;
+
+}	t_element;
+
+typedef struct s_stack
+{
+	t_element	*values;
+	int			head;
+	int			size;
+	int			cap;
+}	t_stack;
 
 typedef struct s_data
 {
