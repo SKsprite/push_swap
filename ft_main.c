@@ -6,7 +6,7 @@
 /*   By: jayam <jayam@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 15:50:49 by jayam             #+#    #+#             */
-/*   Updated: 2026/11/26 13:57:16 by jayam            ###   ########.fr       */
+/*   Updated: 2026/11/26 16:19:13 by jayam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char *argv[])
 	if (argc == 1)
 		return (0);
 	// Initialize t_data
-	data->cfg.strategy = ADAPTIVE;
+	data.cfg.strategy = ADAPTIVE;
 	while (argv[i] != NULL)
 	{
 		i = ft_flags(argv, &data.cfg);

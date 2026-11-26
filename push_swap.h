@@ -6,7 +6,7 @@
 /*   By: jayam <jayam@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 15:34:05 by jayam             #+#    #+#             */
-/*   Updated: 2026/11/26 13:13:21 by jayam            ###   ########.fr       */
+/*   Updated: 2026/11/26 15:52:14 by jayam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+# include "libft/libft.h"
 
 typedef enum e_strategies
 {
