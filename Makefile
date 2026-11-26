@@ -1,12 +1,17 @@
 NAME		= push_swap
-BONUS_NAME	= checker
 CC			= cc
 CFLAGS		= -Wall -Wextra -Werror
 INC			= push_swap.h
 
+LIBFT_DIR	= ./libft
+LIBFT		= $(LIBFT_DIR)/libft.a
+
+AR			= ar rcs
 RM			= rm -f
 
-SRCS		= ft_main.c \
+SRCS		= ft_initialize.c \
+			ft_main.c \
+			ft_operations.c \
 			ft_parse.c \
 			ft_push_swap_utils.c \
 			ft_sort.c
@@ -15,26 +20,23 @@ OBJS		= $(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS) libft/libft.a
-	$(CC) $(CFLAGS) $(OBJS) -Llibft -lft -o $(NAME)
+$(NAME): $(LIBFT) $(OBJS)
+		cp $(LIBFT) $(NAME)
+		$(AR) $(NAME) $(OBJS)
 
-libft/libft.a:
-	$(MAKE) -C libft
+$(LIBFT):
+		$(MAKE) -C $(LIBFT_DIR)
 
 %.o: %.c $(INC)
 		$(CC) $(CFLAGS) -c $< -o $@
 
-bonus: $(BONUS_NAME)
-$(BONUS_NAME): $(BONUS_OBJS) $(SHARED_OBJS) libft/libft.a
-	$(CC) $(CFLAGS) $^ -Llibft -lft -o $@
-
 clean:
-	$(MAKE) -C libft clean
-	$(RM) $(OBJS) $(BONUS_OBJS)
+		$(RM) $(OBJS)
+		$(MAKE) -C $(LIBFT_DIR) clean
 
 fclean: clean
-	$(MAKE) -C libft fclean
-	$(RM) $(NAME) $(BONUS_NAME)
+		$(RM) $(NAME)
+		$(MAKE) -C $(LIBFT_DIR) fclean
 
 re: fclean all
 
