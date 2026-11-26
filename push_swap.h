@@ -6,7 +6,7 @@
 /*   By: jayam <jayam@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 15:34:05 by jayam             #+#    #+#             */
-/*   Updated: 2026/11/25 21:11:01 by jayam            ###   ########.fr       */
+/*   Updated: 2026/11/26 12:56:54 by jayam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,31 +40,31 @@ typedef struct s_stack
 	int			cap;
 }	t_stack;
 
+typedef struct s_config
+{
+	int				bench_mode;
+	t_strategies	strategy;
+	double			disorder;
+	int				total_count;
+	int				sa_count;
+	int				sb_count;
+	int				ss_count;
+	int				pa_count;
+	int				pb_count;
+	int				ra_count;
+	int				rb_count;
+	int				rr_count;
+	int				rra_count;
+	int				rrb_count;
+	int				rrr_count;
+}					t_config;
+
 typedef struct s_data
 {
 	t_stack		*stack_a;
 	t_stack		*stack_b;
 	t_config	*cfg;
 }	t_data;
-
-typedef struct s_config
-{
-	int		bench_mode;
-	int		strategy;
-	double	disorder;
-	int		total_count;
-	int		sa_count;
-	int		sb_count;
-	int		ss_count;
-	int		pa_count;
-	int		pb_count;
-	int		ra_count;
-	int		rb_count;
-	int		rr_count;
-	int		rra_count;
-	int		rrb_count;
-	int		rrr_count;
-}	t_config;
 
 void	ft_error(void);
 
