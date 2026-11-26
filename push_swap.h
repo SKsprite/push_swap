@@ -25,13 +25,19 @@ typedef enum e_strategies
 	ADAPTIVE
 }	t_strategies;
 
+typedef struct s_element
+{
+	int	value;
+	int rank;
+
+}	t_element;
+
 typedef struct s_stack
 {
-	int	*values;
-	int	*ranks;
-	int	head;
-	int	size;
-	int	cap;
+	t_element	*values;
+	int			head;
+	int			size;
+	int			cap;
 }		t_stack;
 
 typedef struct s_config
