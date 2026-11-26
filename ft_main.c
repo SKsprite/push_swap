@@ -20,13 +20,21 @@ int	main(int argc, char *argv[])
 	i = 1;
 	if (argc == 1)
 		return (0);
+	// Initialize t_data
+	data->cfg.strategy = ADAPTIVE;
+	while (argv[i] != NULL)
+	{
+		i = ft_flags(argv, &data.cfg);
+		if (argv[i] == NULL)
+			ft_error();
+	}
 	return (0);
 }
 
 // Outline
 // 1. Flag parsing
-// 2. Count, allocaten, and initialize stacks
-// 3. Validate data, populate stakc and assign ranks
+// 2. Count, allocate, and initialize stacks
+// 3. Validate data, populate stack and assign ranks
 // 4. Initial disorder calculation
 // 5. Strategy selection and execution - default strategy is adaptive
 // 6. Benchmark report and cleanup

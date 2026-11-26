@@ -61,7 +61,7 @@ Gemini was used for the following tasks:
 
 1. Enum data type for clarity when reading code
 2. Validation of flags and list of integers as command-line arguments are first done before stack construction. This architectural choice would prevent invalid states early on in the program.
-3. Data structure chosen: Doubly linked list vs. circular arrays. Reason for choice?
+3. For the data structure, a circular array is used.
 
 ## Authors
 
