@@ -14,11 +14,19 @@
 
 float	ft_disorder(void)
 {
+	return (0.0);
 }
 
 void	ft_error(void)
 {
 	write(2, "Error\n", 6);
+	exit(1);
+}
+
+void	free_error(t_data *data)
+{
+	free_data(data);
+	ft_error();
 }
 
 void	ft_validate(void)

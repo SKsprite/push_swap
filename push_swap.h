@@ -91,8 +91,10 @@ typedef struct s_data
 }	t_data;
 
 void	ft_error(void);
+void	free_error(t_data *data);
 t_data	*init_data(int size_of_stack);
 void	free_data(t_data *data);
 void	normalize_rank(t_data *data);
+int		get_size_from_params(char *argv[]);
 
 #endif

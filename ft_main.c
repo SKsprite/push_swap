@@ -21,14 +21,15 @@ int	main(int argc, char *argv[])
 	if (argc == 1)
 		return (0);
 	// get_size_from_params 
-	data = init_data(get_size_from_params());
-	data->cfg->strategy = ADAPTIVE;
-	while (argv[i] != NULL)
-	{
-		i = ft_flags(argv, data->cfg);
-		if (argv[i] == NULL)
-			ft_error();
-	}
+	data = init_data(get_size_from_params(argv));
+	// data->cfg->strategy = ADAPTIVE;
+	// while (argv[i] != NULL)
+	// {
+	// 	i = ft_flags(argv, data->cfg);
+	// 	if (argv[i] == NULL)
+	// 		ft_error();
+	// }
+	free_data(data);
 	return (0);
 }
 
