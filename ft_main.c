@@ -34,10 +34,10 @@ int	main(int argc, char *argv[])
 
 // Outline
 // 1. Flag parsing
-// 2. Count, allocate, and initialize stacks
-// 3. Validate data, populate stack and assign ranks
-// 4. Initial disorder calculation
+// 2. Count, allocate[], and initialize stacks[]
+// 3. Validate data, populate stack and assign ranks[]
+// 4. Initial disorder calculation <-
 // 5. Strategy selection and execution - default strategy is adaptive
-// 6. Benchmark report and cleanup
+// 6. Benchmark report and cleanup[]
 
 // How can an array indexed by enum be used to track operation counters?

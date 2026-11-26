@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+# include "libft/libft.h"
 
 typedef enum e_strategies
 {
@@ -92,5 +93,6 @@ typedef struct s_data
 void	ft_error(void);
 t_data	*init_data(int size_of_stack);
 void	free_data(t_data *data);
+void	normalize_rank(t_data *data);
 
 #endif

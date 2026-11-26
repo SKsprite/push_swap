@@ -40,3 +40,10 @@ int	ft_flags(char *argv[], t_config *cfg)
 	}
 	return (i);
 }
+
+int parse_int()
+{
+	return (1);
+}
+
+int get_size_from_params()
