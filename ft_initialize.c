@@ -6,7 +6,7 @@
 /*   By: stkoh <stkoh@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/26 12:08:19 by stkoh             #+#    #+#             */
-/*   Updated: 2026/11/26 12:18:05 by stkoh            ###   ########.fr       */
+/*   Updated: 2026/11/26 13:05:02 by stkoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,13 @@
 	if (!data->cfg)
 		return (free(data->stack_a), free(data->stack_b), free(data), NULL);
 	return (data);
+}
+
+
+void	free_data(t_data *data)
+{
+	free(data->stack_a);
+	free(data->stack_b);
+	free(data->cfg);
+	free(data);
 }
