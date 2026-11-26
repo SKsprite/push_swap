@@ -6,7 +6,7 @@
 /*   By: jayam <jayam@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 15:50:49 by jayam             #+#    #+#             */
-/*   Updated: 2026/11/25 21:13:39 by jayam            ###   ########.fr       */
+/*   Updated: 2026/11/26 12:55:20 by jayam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,38 +14,21 @@
 
 int	main(int argc, char *argv[])
 {
-	int	i;
-	int	*p;
-	t_config *cfg;
+	int			i;
+	t_data		data;
 
 	i = 1;
-	p = &i;
 	if (argc == 1)
-		exit(0);
-	else
-	{
-		while (argv[i] != NULL)
-		{
-			// Ignore below, this part needs to be rewritten
-			i = ft_flags(*argv[i], *p, *cfg);
-			// Integer parsing
-			i++;
-		}
-		// Validate
-	}
+		return (0);
 	return (0);
 }
 
 // Outline
 // 1. Flag parsing
-// 2. Parse integers into data structure
-// 3. Validate data; some issues which display error on the stderr:
-// - Arguments that are not integers
-// - Integers outside valid range (INT_MIN/INT_MAX)
-// - Duplicate values
-// 4. Stack initialization & operations (stack formatting; 2-3 files)
-// 5. Initial disorder calculation:
-// - What if initial disorder is 0?
-// 6. Strategy selection and execution - default strategy is adaptive
+// 2. Count, allocaten, and initialize stacks
+// 3. Validate data, populate stakc and assign ranks
+// 4. Initial disorder calculation
+// 5. Strategy selection and execution - default strategy is adaptive
+// 6. Benchmark report and cleanup
 
 // How can an array indexed by enum be used to track operation counters?
