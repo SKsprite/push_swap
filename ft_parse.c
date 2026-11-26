@@ -6,13 +6,13 @@
 /*   By: jayam <jayam@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 15:54:09 by jayam             #+#    #+#             */
-/*   Updated: 2026/11/26 16:45:54 by jayam            ###   ########.fr       */
+/*   Updated: 2026/11/26 17:00:23 by jayam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_strat(char *argv, t_config *cfg, int *strat_set)
+static void	ft_strat(char *argv, t_config *cfg, int *strat_set)
 {
 	if (ft_strncmp(argv, "--simple", 9) == 0)
 		cfg->strategy = SIMPLE;

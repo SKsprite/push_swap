@@ -6,7 +6,7 @@
 /*   By: jayam <jayam@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 15:50:49 by jayam             #+#    #+#             */
-/*   Updated: 2026/11/26 16:52:52 by jayam            ###   ########.fr       */
+/*   Updated: 2026/11/26 17:11:10 by jayam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	main(int argc, char *argv[])
 }
 
 // Outline
-// 1. Flag parsing
+// 1. Flag parsing[]
 // 2. Count, allocate, and initialize stacks
 // 3. Validate data, populate stack and assign ranks
 // 4. Initial disorder calculation

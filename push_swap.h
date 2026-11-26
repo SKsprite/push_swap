@@ -6,7 +6,7 @@
 /*   By: jayam <jayam@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 15:34:05 by jayam             #+#    #+#             */
-/*   Updated: 2026/11/26 15:52:14 by jayam            ###   ########.fr       */
+/*   Updated: 2026/11/26 17:01:28 by jayam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ typedef struct s_data
 	t_config	*cfg;
 }	t_data;
 
+int		ft_flags(char *argv[], t_config *cfg);
 void	ft_error(void);
 t_data	*init_data(int size_of_stack);
 void	free_data(t_data *data);

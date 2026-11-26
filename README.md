@@ -44,6 +44,7 @@ Gemini was used for the following tasks:
 - Explanation for split- and multi- argument parsing
 - Considerations to make during validation (Incremental vs Batch)
 - Configuration of data structures used
+- Improvements for functions that handle flag parsing
 
 ## Algorithms
 
