@@ -61,9 +61,9 @@ typedef struct s_config
 
 typedef struct s_data
 {
-	t_stack		*a;
-	t_stack		*b;
-	t_config	config;
+	t_stack		*stack_a;
+	t_stack		*stack_b;
+	t_config	*cfg;
 }	t_data;
 
 void	ft_error(void);
