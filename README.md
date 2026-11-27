@@ -36,6 +36,10 @@ Available `Makefile` rules:
 
 ### AI usage
 
+Claude was used for the following tasks:
+
+- 
+
 Gemini was used for the following tasks:
 
 - Provision of online resources on Big-O notation
@@ -45,6 +49,7 @@ Gemini was used for the following tasks:
 - Considerations to make during validation (Incremental vs Batch)
 - Configuration of data structures used
 - Improvements for functions that handle flag parsing
+- Improvements for function that computes disorder
 
 ## Algorithms
 
@@ -60,7 +65,8 @@ Gemini was used for the following tasks:
 
 ## Technical choices
 
-1. Enum data type for clarity when reading code
+1. Enumeration type defines possible strategies as integer constants (SIMPLE = 0, MEDIUM = 1,
+COMPLEX = 2, ADAPTIVE = 3). This improves code readability instead of using magic numbers.
 2. Validation of flags and list of integers as command-line arguments are first done before stack construction. This architectural choice would prevent invalid states early on in the program.
 3. For the data structure, a circular array is used.
 

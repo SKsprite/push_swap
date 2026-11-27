@@ -6,7 +6,7 @@
 /*   By: jayam <jayam@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 15:34:05 by jayam             #+#    #+#             */
-/*   Updated: 2026/11/27 14:46:53 by jayam            ###   ########.fr       */
+/*   Updated: 2026/11/27 16:51:07 by jayam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,7 @@ int		check_is_digit(char *str);
 void	free_data(t_data *data);
 void	free_error(t_data *data);
 void	free_stack(t_data *data);
+double	ft_disorder(t_stack *stack_a);
 void	ft_error(void);
 int		ft_flags(char *argv[], t_data *data);
 int		get_size_from_params(char *argv[]);
