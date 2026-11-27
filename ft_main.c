@@ -6,7 +6,7 @@
 /*   By: jayam <jayam@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 15:50:49 by jayam             #+#    #+#             */
-/*   Updated: 2026/11/26 19:53:44 by jayam            ###   ########.fr       */
+/*   Updated: 2026/11/27 15:00:02 by jayam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	main(int argc, char *argv[])
 // 2. Count, allocate[], and initialize stacks[]
 // 3. Validate data, populate stack and assign ranks[]
 // 4. Initial disorder calculation <-
-// 5. Strategy selection and execution - default strategy is adaptive
+// 5. Strategy selection and execution
+// - Default strategy is adaptive
+// - How can an array indexed by enum be used to track operation counters?
 // 6. Benchmark report and cleanup[]
-
-// How can an array indexed by enum be used to track operation counters?

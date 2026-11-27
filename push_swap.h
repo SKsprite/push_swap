@@ -6,7 +6,7 @@
 /*   By: jayam <jayam@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 15:34:05 by jayam             #+#    #+#             */
-/*   Updated: 2026/11/26 17:01:28 by jayam            ###   ########.fr       */
+/*   Updated: 2026/11/27 14:46:53 by jayam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,12 +90,15 @@ typedef struct s_data
 	t_config	*cfg;
 }	t_data;
 
-int		ft_flags(char *argv[], t_config *cfg);
-void	ft_error(void);
-void	free_error(t_data *data);
-t_data	*init_data(int size_of_stack);
+int		check_is_digit(char *str);
 void	free_data(t_data *data);
-void	normalize_rank(t_data *data);
+void	free_error(t_data *data);
+void	free_stack(t_data *data);
+void	ft_error(void);
+int		ft_flags(char *argv[], t_data *data);
 int		get_size_from_params(char *argv[]);
+t_data	*init_data(int size_of_stack);
+int		init_stacks(int size_of_stack, t_data *data);
+void	normalize_rank(t_data *data);
 
 #endif

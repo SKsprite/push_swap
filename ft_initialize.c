@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_initialize.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stkoh <stkoh@student.42singapore.sg>       +#+  +:+       +#+        */
+/*   By: jayam <jayam@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/26 12:08:19 by stkoh             #+#    #+#             */
-/*   Updated: 2026/11/26 13:05:02 by stkoh            ###   ########.fr       */
+/*   Updated: 2026/11/27 14:35:50 by jayam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,6 @@ int	init_stacks(int size_of_stack, t_data *data)
 	return (0);
 }
 
-void	free_stack(t_data *data)
-{
-	free(data->stack_a->values);
-	free(data->stack_b->values);
-	free(data->stack_a);
-	free(data->stack_b);
-}
-
 /**
  * @brief Creates an empty data structure on the heap.
  *
@@ -68,19 +60,4 @@ t_data	*init_data(int size_of_stack)
 	if (!data->cfg)
 		return (free_stack(data), free(data), NULL);
 	return (data);
-}
-
-/**
- * @brief Frees the data structure of the program.
- *
- * Frees the given data structure and all elements within stack a, stack b
- * and the configurations set for the program.
- *
- * @param data  The data of the entire program.
- */
-void	free_data(t_data *data)
-{
-	free_stack(data);
-	free(data->cfg);
-	free(data);
 }

@@ -6,7 +6,7 @@
 /*   By: jayam <jayam@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 16:12:23 by jayam             #+#    #+#             */
-/*   Updated: 2026/11/26 19:52:44 by jayam            ###   ########.fr       */
+/*   Updated: 2026/11/27 14:57:54 by jayam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,22 +40,10 @@ double	ft_disorder(t_stack *stack_a)
 		while (j < stack_a->size)
 		{
 			pairs++;
-			// 
+			
 			j++;
 		}
 		i++;
 	}
 	return ((double)mistakes / (double)pairs);
-}
-
-void	ft_error(void)
-{
-	write(2, "Error\n", 6);
-	exit(1);
-}
-
-void	free_error(t_data *data)
-{
-	free_data(data);
-	ft_error();
 }
